@@ -1,26 +1,22 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Login from './LogIn';
+import React, { useEffect } from 'react';
+// import { Routes, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { handleUsersData, handleQuestionsData } from '../actions/shared';
+// import Login from './LogIn';
 import Dashboard from './Dashboard';
 
-function App() {
+const App = (props) => {
+  useEffect((props) => {
+    props.dispatch(handleUsersData());
+    props.dispatch(handleQuestionsData());
+  }, [])
   return (
     <div>
-      <Routes>
-        <Route
-          path="/login"
-          element={
-            <Login/>
-          }
-        />
-        <Route
-          path="/dashboard"
-          element={
-            <Dashboard/>
-          }
-        />
-      </Routes>
+      {props.loading === true ? null : <Dashboard/>}
     </div>
   )
 }
-export default App;
+const mapStateToProps = ({ authedUser }) => ({
+  loading: authedUser === null,
+})
+export default connect(mapStateToProps)(App);
