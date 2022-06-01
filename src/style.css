@@ -10,7 +10,8 @@
   width: 80%;
   height: auto;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .question-container {
@@ -24,8 +25,9 @@
   align-content: space-between;
   justify-content: center;
   flex-direction: row;
-  width: 100%;
+  width: 90%;
   margin-top: 5px;
+  height: 6%;
 }
 h4.title {
   line-height: 0;
@@ -34,7 +36,7 @@ h4.title {
 
 .question-card {
   display: flex;
-  height: 50%;
+  height: 100%;
   border: 2px solid gray;
   background-color: lightsteelblue;
   justify-content: space-around;
@@ -42,7 +44,7 @@ h4.title {
 }
 
 .left-content {
-  height: 60%;
+  height: 80%;
   width: 30%;
   display: flex;
   justify-content: flex-start;
@@ -50,7 +52,7 @@ h4.title {
 }
 
 .right-content {
-  height: 60%;
+  height: 80%;
   width: 40%;
   display: flex;
   justify-content: center;
