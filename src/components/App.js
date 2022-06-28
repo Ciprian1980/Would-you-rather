@@ -13,7 +13,7 @@ const App = (props) => {
       {props.loading === true ? null : <Dashboard/>}
     </div>
   )
-}
+} 
 const mapStateToProps = ({ authedUser }) => ({
   loading: authedUser === null,
 })

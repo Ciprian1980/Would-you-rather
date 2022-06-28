@@ -19,7 +19,7 @@ const Question = (props) => {
                   props.questionIds.map((id) => (
                     <li key={id}>
                       <div>
-                        <Question id={id}/>
+                        Question ID: {id}
                       </div>
                     </li>
                   ))
